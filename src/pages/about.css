@@ -1,0 +1,100 @@
+.about-page {
+  color: white;
+  font-family: sans-serif;
+}
+
+/* HERO */
+.about-hero {
+  height: 60vh;
+  background: url("/about_image.webp") center/cover no-repeat;
+  position: relative;
+}
+
+.about-hero .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero h1 {
+  font-size: 64px;
+  font-weight: 800;
+}
+
+/* MISSION */
+.about-mission {
+  padding: 80px 60px;
+  background: #020a2a;
+}
+
+.mission-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.mission-text {
+  flex: 1;
+}
+
+.mission-text h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.mission-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.mission-image {
+  flex: 1;
+}
+
+.image-placeholder {
+  height: 250px;
+  background: linear-gradient(135deg, #6a5cff, #b44cff);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* VALUES */
+.about-values {
+  padding: 80px 60px;
+  background: #01072a;
+}
+
+.about-values h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+.values-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.values-list {
+  flex: 1;
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+}
+
+.value-item svg {
+  flex-shrink: 0;
+}
+
+.values-image {
+  flex: 1;
+}

@@ -1,0 +1,56 @@
+
+/* .header{
+    
+} */
+
+
+
+
+.hero{
+    
+    .top{
+        overflow: hidden;
+
+        background: url("/Background.jpg") no-repeat center center/cover;
+        /* width: 100%; */
+
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 44px;
+    
+        color: white;
+        
+        h1{
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+    
+        p{
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+    
+        .cta-button{
+            background-color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+    
+            &:hover{
+                background-color: darken(var(--primary-color), 10%);
+                border: 2px solid var(--primary-color);
+            }
+        }
+    }
+
+    .lists{
+        background: linear-gradient(135deg, var(--primary-color-darker) 0%, var(--primary-color-dark) 35%, var(--primary-color-light) 65%, var(--primary-color-darker) 100%);
+    }
+
+}
