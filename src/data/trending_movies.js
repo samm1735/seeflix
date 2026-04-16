@@ -1,4 +1,10 @@
-export const trending_movies = [
+import { getTrendingMovies } from '../services/tmdb';
+import { transformMovies } from '../utils/tmdbTransformer';
+
+
+
+
+const fallbackMovies = [
   {
     "id": 1,
     "title": "The Shawshank Redemption",
@@ -84,3 +90,23 @@ export const trending_movies = [
     "type": "movie"
   }
 ];
+
+
+export let trending_movies = [];
+
+
+export const fetchTrendingMovies = async () => {
+  try {
+    const movies = await getTrendingMovies();
+    trending_movies = transformMovies(movies.slice(0, 20));
+    return trending_movies;
+  } catch (error) {
+    console.error('❌ Failed to fetch trending movies, using fallback data:', error);
+    console.log('📦 Using fallback movies');
+    trending_movies = fallbackMovies;
+    return fallbackMovies;
+  }
+};
+
+
+trending_movies = fallbackMovies;

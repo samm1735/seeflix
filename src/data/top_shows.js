@@ -1,5 +1,9 @@
-export const top_shows = [
-  {
+import { getTopRatedTVShows } from '../services/tmdb';
+import { transformTVShows } from '../utils/tmdbTransformer';
+
+
+const fallbackShows = [
+   {
     "id": 1,
     "title": "Breaking Bad",
     "cover": "https://image.tmdb.org/t/p/w500/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
@@ -84,3 +88,22 @@ export const top_shows = [
     "type": "tv_show"
   }
 ];
+
+export let top_shows = [];
+
+
+export const fetchTopShows = async () => {
+  try {
+    const shows = await getTopRatedTVShows();
+    top_shows = transformTVShows(shows.slice(0, 20));
+    return top_shows;
+  } catch (error) {
+    console.error('❌ Failed to fetch top shows, using fallback data:', error);
+    console.log('📦 Using fallback shows');
+    top_shows = fallbackShows;
+    return fallbackShows;
+  }
+};
+
+
+top_shows = fallbackShows;

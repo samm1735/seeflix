@@ -5,8 +5,23 @@ import Media from "./pages/Media";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar/Navbar";
+import { useEffect, useState } from "react";
+import { fetchTopShows } from "./data/top_shows";
+import { fetchTrendingMovies } from "./data/trending_movies";
 
 function App() {
+
+  const [, forceUpdate] = useState({});
+
+  useEffect(() => {
+    Promise.all([
+      fetchTopShows(),
+      fetchTrendingMovies()
+    ]).then(() => {
+      forceUpdate({});
+    });
+  }, []);
+
   return (
     <BrowserRouter>
       <Navbar />
